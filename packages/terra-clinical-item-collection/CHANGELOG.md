@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated jest snapshots terra-icon A11y updatess.
+
 ## 4.29.0 - (July 21, 2021)
 
 * Changed
