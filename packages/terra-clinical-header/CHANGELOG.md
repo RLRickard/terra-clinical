@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated the component examples.
+
+## 3.25.0 - (March 29, 2023)
 
 * Changed
   * Replaced `title` prop to `text` prop to allow users to spread title HTML Attribute as customProps.

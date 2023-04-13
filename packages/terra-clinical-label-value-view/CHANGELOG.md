@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated the component examples.
+
+## 3.27.0 - (March 29, 2023)
 
 * Changed
   * Updated wdio screenshots.

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.30.0 - (March 29, 2023)
+
 * Changed
   * Updated jest snapshots terra-icon A11y updatess.
   * Updated wdio screenshots.
