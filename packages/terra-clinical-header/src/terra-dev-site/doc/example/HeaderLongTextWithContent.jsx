@@ -14,7 +14,7 @@ const LongTextWithContent = () => (
       text="Patient Information for Individual Diagnosed with a Chronic Disease in the past or currently suffering: Comprehensive Medical History,Treatment Plan,and Prognosis Report"
       endContent={<Button text="print" />}
       level={3}
-     >
+    >
       <Placeholder className={cx('placeholder-wrapper')} title="Collapsible Menu View" />
       <Button text="Medical History" />
     </Header>
