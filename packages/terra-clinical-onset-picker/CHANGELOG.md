@@ -5,7 +5,6 @@
 ## 4.32.0 - (March 29, 2023)
 
 * Changed
-  * Updated jest snapshots terra-icon A11y updatess.
   * Updated wdio screenshots.
   * Updated jest snapshots
   * Locking terra-form-fieldset due to a bug
