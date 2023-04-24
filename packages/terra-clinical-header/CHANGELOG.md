@@ -9,6 +9,10 @@
 
 * Changed
   * Deprecated `title` prop.
+
+## 3.26.0 - (April 21, 2023)
+
+* Changed
   * Updated the component examples.
 
 ## 3.24.0 - (July 21, 2021)

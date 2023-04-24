@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 2.40.0 - (April 21, 2023)
+
+* Added
+  * Added tabbing support for multiple grids on the same page.
+
 * Added
   * Defined roles for better screen reader experience
   * New `labelRef` and `descriptionRef` props for allowing a consumer to define label and description of data-grid
