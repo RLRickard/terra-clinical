@@ -1,0 +1,83 @@
+import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
+import ResultNameHeaderCellAccessibleNamesExample from '../example/result-name-header-cell/ResultNameHeaderCellAccessibleNamesExample';
+
+<Badge />
+
+# Accessibility Guide for Terra Clinical Result
+
+## Why is this important?
+
+Terra Clinical Result is a collection of standardized views for single result values added to a patient's medical chart. As there are many patients who rely on assistive technologies to interact with their chart, it is critical that any information conveyed by a clinical result to sighted users is also conveyed to screen reader users in a meaningful way.
+
+## Accessibility Considerations
+
+### Code Considerations
+
+Terra Clinical Result has several variants designed to either display specific results or for use within a flowsheet. The table below lists each variant and its use.
+
+| Variant | Use |
+| --- | --- |
+| Clinical Result | The default Clinical Result component intended for displaying a single result value |
+| Clinical Result Blood Pressure | Intended for displaying Blood Pressure Vital Sign results |
+| Flowsheet Result Cell | Specifically for the grid display of a result collection |
+| Result Name Header Cell | Standardized view for the Result Name and Unit of Measure in the row header for each row within a flowsheet |
+| Result Time Header Cell | Standardized view for the Date/Time Header cells for each bucketed time column within a flowsheet |
+
+The following sections go into more detail on accessibility considerations for each variant.
+
+----
+
+#### Result Name Header Cell
+
+Result Name Header Cell creates a standardized view for the Result Name and Unit of Measure pair within a flowsheet. In many cases, the displayed result name or displayed unit of measure is an abbreviation. Reading out these abbreviations is not very helpful for screen reader users. In order to provide better accessible names for the result name and unit of measure, the `fullResultName` and `fullUnit` [props](https://engineering.cerner.com/terra-ui/components/terra-clinical-result/clinical-result/result-name-header-cell#result-name-header-cell-props) can be used to set the full name of the result name and unit when consuming the Result Name Header Cell component.
+
+<Notice variant="important" ariaLevel="5">
+
+###### Accessibility Guidance: Utilize the `fullResultName` and `fullUnit` props to provide better accessible names for the result name and unit of measure
+
+<div aria-label="Example demo">
+  <ResultNameHeaderCellAccessibleNamesExample />
+</div>
+<div aria-label="Example code">
+
+    import { ResultNameHeaderCell } from 'terra-clinical-result/lib/index';
+
+    <div className={cx('mock-flowsheet-firstcolumn-cell')}>
+      <ResultNameHeaderCell resultName="Temp" fullResultName="Temperature" unit="degC" fullUnit="Degrees Celsius" />
+    </div>
+
+</div>
+
+This example shows how to set up the optional fullResultName and fullUnit props in order to provide accessible names for the displayed result name and unit. This approach is recommended when using abbreviations for the result name or unit of measure in the Result Name Header Cell component.
+
+</Notice>
+
+## Usability Expectations
+
+### Interaction Details
+
+None
+
+### Keyboard Navigation
+
+None
+
+## Support Compliance
+
+Terra is committed to ensuring its components provide maximum possible accessibility. However, using Terra components will not automatically make a product accessible.
+
+Final responsibility lies with the consumers of Terra components &mdash; ensuring proper usage, engineers following correct implementation patterns, and authors crafting content that follows best practice guidance &mdash; to make a product fully accessible.
+
+### WCAG Resources
+
+#### Success Criteria
+
+### Partial Support & Requiring Further Enhancement
+
+- None identified
+- [Report a problem with this component on **GitHub**](https://github.com/cerner/terra-clinical/issues/new/choose)
+
+_For more information about Accessibility Support with Terra — go to [Component Standards: Accessibility (A11y)](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y)._
+
+## Linked References:
