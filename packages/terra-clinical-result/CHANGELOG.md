@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added site documentation for Flowsheet, Time Header, and Name Header cells usage.
+
 ## 1.18.0 - (June 22, 2023)
 
 * Added
