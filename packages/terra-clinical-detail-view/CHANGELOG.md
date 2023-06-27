@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added accessibility guide
+
 ## 3.31.0 - (June 22, 2023)
 
 * Added
