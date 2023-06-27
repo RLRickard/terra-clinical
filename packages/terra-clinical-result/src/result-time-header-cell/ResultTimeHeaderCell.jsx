@@ -62,7 +62,7 @@ const ResultTimeHeaderCell = (props) => {
       className={timeHeaderCellClassnames}
     >
       <div className={dateClassnames}>{date}</div>
-      <time className={cx('time')}>{time}</time>
+      <div className={cx('time')}>{time}</div>
     </th>
   );
 };

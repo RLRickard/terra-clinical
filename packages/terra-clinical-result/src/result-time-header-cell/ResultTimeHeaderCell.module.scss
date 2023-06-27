@@ -30,7 +30,6 @@
     .time {
       @include terra-clinical-result-cell-truncate;
       color: var(--terra-clinical-result-time-header-cell-time-color);
-      display: block;
       flex: 0 1 auto;
       font-size: var(--terra-clinical-result-time-header-cell-time-font-size, 1em); // Must use ems for font scaling
       font-weight: var(--terra-clinical-result-time-header-cell-time-font-weight, 400);
