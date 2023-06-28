@@ -68,6 +68,72 @@ const multipleResults = [
   },
 ];
 
+const multipleOverflowResults1 = [
+  {
+    eventId: '1602328271',
+    result: {
+      value: '101',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: true,
+    hasComment: true,
+  },
+  {
+    eventId: '1602328282',
+    result: {
+      value: '101.2',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: false,
+    hasComment: false,
+  },
+  {
+    eventId: '1602328293',
+    result: {
+      value: '101.3',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: false,
+    hasComment: false,
+  },
+];
+
+const multipleOverflowResults2 = [
+  {
+    eventId: '1602328271',
+    result: {
+      value: '10111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: true,
+    hasComment: true,
+  },
+  {
+    eventId: '1602328282',
+    result: {
+      value: '101.2',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: false,
+    hasComment: false,
+  },
+  {
+    eventId: '1602328293',
+    result: {
+      value: '101.3',
+      unit: 'degC',
+    },
+    isNumeric: true,
+    isModified: false,
+    hasComment: false,
+  },
+];
+
 const multipleDecoratedResults = [
   {
     id: '10',
@@ -195,6 +261,24 @@ const unverifiedResult = [
     },
   },
 ];
+const partialStandardResult = {
+  result: {
+    value: '12345.678',
+    unit: 'mL',
+  },
+};
+
+const enteredInError = [
+  {
+    id: '1577836800',
+    ...partialStandardResult,
+    status: 'entered-in-error',
+  },
+  {
+    id: '1577836911',
+    ...partialStandardResult,
+  },
+];
 
 export default () => (
   <Table>
@@ -211,9 +295,21 @@ export default () => (
         <FlowsheetResultCell key="date" resultDataSet={[{ id: 2, result: { value: 'May 12th' } }]} />
       </Row>
       <Row>
-        {/* This example cell shows mulitple resutls */}
+        {/* This example cell shows mulitple results */}
         <FlowsheetResultCell key="notes" resultDataSet={[{ id: 3, result: { value: 'Multiple Results' } }]} />
         <FlowsheetResultCell key="bp" resultDataSet={multipleResults} hideUnit />
+        <FlowsheetResultCell key="date" resultDataSet={[{ id: 4, result: { value: 'May 12th' } }]} />
+      </Row>
+      <Row>
+        {/* This example cell shows mulitple overflow results without overflow */}
+        <FlowsheetResultCell key="notes" resultDataSet={[{ id: 3, result: { value: 'Numeric Overflow Multiple Results (no overflow)' } }]} />
+        <FlowsheetResultCell key="bp" resultDataSet={multipleOverflowResults1} hideUnit />
+        <FlowsheetResultCell key="date" resultDataSet={[{ id: 4, result: { value: 'May 12th' } }]} />
+      </Row>
+      <Row>
+        {/* This example cell shows mulitple overflow results with overflow */}
+        <FlowsheetResultCell key="notes" resultDataSet={[{ id: 3, result: { value: 'Numeric Overflow Multiple Results (has overflow)' } }]} />
+        <FlowsheetResultCell key="bp" resultDataSet={multipleOverflowResults2} hideUnit />
         <FlowsheetResultCell key="date" resultDataSet={[{ id: 4, result: { value: 'May 12th' } }]} />
       </Row>
       <Row>
@@ -256,6 +352,12 @@ export default () => (
         {/* This example cell shows a result with an error */}
         <FlowsheetResultCell key="notes" resultDataSet={[{ id: 17, result: { value: 'Error Result' } }]} />
         <FlowsheetResultCell key="bp" hasResultError />
+        <FlowsheetResultCell key="date" resultDataSet={[{ id: 18, result: { value: 'May 12th' } }]} />
+      </Row>
+      <Row>
+        {/* This example cell shows a result with a status of  entered-in-error */}
+        <FlowsheetResultCell key="notes" resultDataSet={[{ id: 17, result: { value: 'Entered-in-error Result' } }]} />
+        <FlowsheetResultCell key="bp" resultDataSet={enteredInError} />
         <FlowsheetResultCell key="date" resultDataSet={[{ id: 18, result: { value: 'May 12th' } }]} />
       </Row>
     </Body>
