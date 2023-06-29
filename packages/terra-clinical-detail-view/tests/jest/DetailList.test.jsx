@@ -31,6 +31,18 @@ it('should render a list', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a list with empty nodes', () => {
+  const detailList = (
+    <DetailView.DetailList>
+      <DetailView.DetailListItem item={<p>Test</p>} />
+      <DetailView.DetailListItem item={<p>Test</p>} />
+      {null}
+    </DetailView.DetailList>
+  );
+  const wrapper = render(detailList);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render a title and a list', () => {
   const wrapper = render(defaultVariety);
   expect(wrapper).toMatchSnapshot();
